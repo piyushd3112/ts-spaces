@@ -1,0 +1,25 @@
+TS-SPACES: cPanel installation
+
+1. Select PHP 8.1 or newer in cPanel. Enable cURL for enquiry delivery.
+2. Open File Manager and open the domain's public_html directory.
+3. Upload TS-SPACES-cPanel.zip and extract it directly into public_html.
+   index.php, .htaccess, assets/, images/ and php/ must be directly inside
+   public_html, not inside an extra TS-SPACES or public folder.
+4. If the old site has index.html, rename it to index-old.html so it does
+   not override the PHP homepage. Back up any previous website first.
+5. Visit your domain. No npm install, build or database is needed.
+6. Delete the uploaded ZIP after extraction.
+
+The domain and HTTPS are detected automatically. For a fixed canonical
+domain or enquiry delivery, copy config.example.php to config.local.php
+in public_html and edit its settings. Leave the webhook empty to preserve
+the existing disabled enquiry form. The form needs an HTTPS webhook that
+accepts JSON enquiries; cURL must be enabled for delivery.
+
+The included Apache .htaccess rules preserve clean page URLs and deny web
+access to php/ and configuration files. Ensure hidden files are visible
+in File Manager and that .htaccess was extracted. If using a server that
+does not support Apache .htaccess, equivalent server rules are required.
+
+This ZIP contains only the PHP website. Do not upload node_modules,
+.next, the original React source, or the full development workspace.

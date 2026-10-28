@@ -7,3 +7,5 @@ node_modules/
 /test-results/
 /playwright-report/
 /homepage-*.png
+/config.local.php
+/dist/
